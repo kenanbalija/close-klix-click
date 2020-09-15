@@ -4,10 +4,8 @@ if (isKlix) {
     let activated = false;
     let seconds = 0;
     const closeBtnInt = setInterval(() => {
-        console.log('fired sec', seconds)
         seconds += 0.1
         if (document.getElementsByClassName('fc-close')[0] !== undefined) {
-            console.log('found')
             eventFire(document.getElementsByClassName('fc-close')[0], 'click')
             activated = true
         }
@@ -26,5 +24,4 @@ function eventFire (el, etype) {
         evObj.initEvent(etype, true, false);
         el.dispatchEvent(evObj);
     }
-    console.log('clicked')
 }
