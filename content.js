@@ -1,6 +1,8 @@
 const loc = window.location.toString();
 const isKlix = loc.indexOf('klix.ba') !== -1;
-if (isKlix) {
+const isAvaz = loc.indexOf('avaz.ba') !== -1;
+
+if (isKlix || isAvaz) {
     let activated = false;
     let seconds = 0;
     const closeBtnInt = setInterval(() => {
@@ -14,7 +16,6 @@ if (isKlix) {
         }
     }, 100);
 }
-
 
 function eventFire (el, etype) {
     if (el.fireEvent) {
